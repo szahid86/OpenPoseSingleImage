@@ -92,29 +92,30 @@ In order to run the openpose you just built on your system, go to `build\x64\Rel
 
 ## Run OpenPose on single image
 Now this is the final part, and the part we are here for, i.e., runing open pose on a single image. For this you can make an empty new Visual Studio Project (C++) and then add the OpenPoseSingleImage.cpp into the project. Add the C/C++ include directories:
-`3rdparty/include/boost-1_61/`
-`3rdparty/include/`
-`3rdparty/include2/`
+`3rdparty/include/boost-1_61/` ;
+`3rdparty/include/` ;
+`3rdparty/include2/` ;
 `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include`
 
 and set the preprocessor flags
-`GLOG_NO_ABBREVIATED_SEVERITIES
-NDEBUG
-USE_OPENCV
-USE_CAFFE
-USE_CUDA
+`GLOG_NO_ABBREVIATED_SEVERITIES ;
+NDEBUG ;
+USE_OPENCV ;
+USE_CAFFE ;
+USE_CUDA ;
 BOOST_ALL_DYN_LINK`
 
 add the Additional Dependencies in to the Linker:
-`cudart_static.lib
-caffe.lib
-caffeproto.lib
-gflags.lib
-glog.lib
-cublas.lib
-curand.lib
-cudart.lib
-pthreadVC2.lib
+`cudart_static.lib ;
+caffe.lib ;
+caffeproto.lib ;
+openpose.lib ;
+gflags.lib ;
+glog.lib ;
+cublas.lib ;
+curand.lib ;
+cudart.lib ;
+pthreadVC2.lib ;
 opencv_world320.lib`
 (Please note that you have to provide the correct link to these libraries in the Linker>General>Additional Library Directories)
 
