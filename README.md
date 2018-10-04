@@ -1,5 +1,11 @@
 # OpenPoseSingleImage
 This repository presents the code and help to processes single frame/image using OpenPose library.
+Before I start, all the credits and licensing rights goes to:
+https://github.com/CMU-Perceptual-Computing-Lab/openpose
+and
+https://github.com/dlunion/OpenPose
+Please check above repositories for specific details.
+
 
 ## Contents
 0. [Why you are here?](#why-are-you-here?)
