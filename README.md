@@ -16,6 +16,7 @@ Please check above repositories for specific details.
 5. [Installation](#installation)
 6. [Run OpenPose you just built](#run-open-pose-you-just-built)
 7. [Run OpenPose on single image](#run-open-pose-on-single-image)
+8. [Keypoint ordering](#keypoint-ordering)
 
 
 ## Why are you here?
@@ -121,5 +122,31 @@ opencv_world320.lib`
 That is all .. now just build your project. Finally, you can run your .exe file using the following command line arguments:
 
 OpenPoseSingleImage.exe imagefile_path gpuid[0] base_width[656] base_height[368] path_to_pose_deploy_linevec.prototxt path_to_pose_iter_440000.caffemodel
+
+The following function in the main() returns the exact keypoints of the joints in 2d point format `std::vector<cv::Point>` :
+`vector<Point> finalKeypoints = renderPoseKeypointsCpu(raw_image, keypoints, shape, 0.05, scale);`
+
+## Keypoint ordering
+
+The keypoitns are arranged as below:
+`Point[0] : (x , y) // face center 
+Point[1] : (x , y) // neck joint 
+Point[2] : (x , y) // right shoulder joint 
+Point[3] : (x , y) // right elbow joint 
+Point[4] : (x , y) // right palm  
+Point[5] : (x , y) // left shoulder joint 
+Point[6] : (x , y) // left elbow joint 
+Point[7] : (x , y) // left palm  
+Point[8] : (x , y) // right hip 
+Point[9] : (x , y) // right knee 
+Point[10] : (x , y) // left hip 
+Point[11] : (x , y) // right eye 
+Point[12] : (x , y) // left eye
+Point[13] : (x , y)  // right ear
+Point[14] : (x , y)  // left ear`
+
+More detail on keypoint ordering at (Pose Output Format (COCO)):
+https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/output.md
+
 
 Enjoy!!
