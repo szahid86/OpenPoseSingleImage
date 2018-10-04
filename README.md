@@ -98,24 +98,24 @@ Now this is the final part, and the part we are here for, i.e., runing open pose
 `C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\include`
 
 and set the preprocessor flags
-`GLOG_NO_ABBREVIATED_SEVERITIES ;
-NDEBUG ;
-USE_OPENCV ;
-USE_CAFFE ;
-USE_CUDA ;
+`GLOG_NO_ABBREVIATED_SEVERITIES 
+NDEBUG 
+USE_OPENCV 
+USE_CAFFE 
+USE_CUDA 
 BOOST_ALL_DYN_LINK`
 
 add the Additional Dependencies in to the Linker:
-`cudart_static.lib ;
-caffe.lib ;
-caffeproto.lib ;
-openpose.lib ;
-gflags.lib ;
-glog.lib ;
-cublas.lib ;
-curand.lib ;
-cudart.lib ;
-pthreadVC2.lib ;
+`cudart_static.lib 
+caffe.lib 
+caffeproto.lib 
+openpose.lib 
+gflags.lib 
+glog.lib 
+cublas.lib 
+curand.lib 
+cudart.lib 
+pthreadVC2.lib 
 opencv_world320.lib`
 (Please note that you have to provide the correct link to these libraries in the Linker>General>Additional Library Directories)
 
@@ -130,21 +130,21 @@ The following function in the main() returns the exact keypoints of the joints i
 ## Keypoint ordering
 
 The keypoitns are arranged as below:
-`Point[0] : (x , y) // face center 
-Point[1] : (x , y) // neck joint 
-Point[2] : (x , y) // right shoulder joint 
-Point[3] : (x , y) // right elbow joint 
-Point[4] : (x , y) // right palm  
-Point[5] : (x , y) // left shoulder joint 
-Point[6] : (x , y) // left elbow joint 
-Point[7] : (x , y) // left palm  
-Point[8] : (x , y) // right hip 
-Point[9] : (x , y) // right knee 
-Point[10] : (x , y) // left hip 
-Point[11] : (x , y) // right eye 
-Point[12] : (x , y) // left eye
-Point[13] : (x , y)  // right ear
-Point[14] : (x , y)  // left ear`
+`Point[0] : (x , y) // face center` 
+`Point[1] : (x , y) // neck joint `
+`Point[2] : (x , y) // right shoulder joint `
+`Point[3] : (x , y) // right elbow joint `
+`Point[4] : (x , y) // right palm  `
+`Point[5] : (x , y) // left shoulder joint `
+`Point[6] : (x , y) // left elbow joint `
+`Point[7] : (x , y) // left palm  `
+`Point[8] : (x , y) // right hip `
+`Point[9] : (x , y) // right knee `
+`Point[10] : (x , y) // left hip `
+`Point[11] : (x , y) // right eye `
+`Point[12] : (x , y) // left eye`
+`Point[13] : (x , y)  // right ear`
+`Point[14] : (x , y)  // left ear`
 
 More detail on keypoint ordering at (Pose Output Format (COCO)):
 https://github.com/CMU-Perceptual-Computing-Lab/openpose/blob/master/doc/output.md
